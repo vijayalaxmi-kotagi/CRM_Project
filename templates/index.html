@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Accuracy Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h2>Upload CRM Data</h2>
+
+    <input type="file" id="fileUpload">
+    <button onclick="uploadFile()">Analyze</button>
+    <button onclick="downloadCSV()">Download Cleaned CSV</button>
+    <button onclick="downloadReport()">Download Report</button>
+
+    <div class="container">
+        <div class="card">
+            <div id="accuracy-container">
+                <h3>Overall Accuracy Score</h3>
+                <p id="accuracy-score">Waiting for results...</p>
+            </div>
+            
+        </div>
+
+        <div class="card">
+            <h3>Anomaly Detection</h3>
+            <canvas id="chart" width="300" height="300"></canvas>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
